@@ -1,11 +1,11 @@
 # Movie Dubber
-Right now, this is just a GUI to run an ffmpeg command to overlay an audio track on a video file; currently intended for movies and dubs, as you must load from the database. Later, I'd like to fix the (disabled for now) video editor so you could sync movies and dubs without having to load from the database.
+Right now, this is a GUI to run an ffmpeg command to overlay an audio track on a video file; currently intended for movies and dubs, as you must load from the database.
 
 ## Things you should know
 - The database currently only contains dubs from [Jaboody Dubs](https://www.patreon.com/jaboodydubs/posts)
   - More can be added from other dub makers should I find them.
 - Some videos (like some older movies) don't like their audio being messed with. So the output file would be out of sync. Try a different movie file with the same Length.
-- Not all movies in the database currently have a Delay. They are not usable right now.
+- Not all movies in the database currently have a Delay. They are not usable right now. You must pick one with the delay available.
 
 ## Screenshots
 <details>
