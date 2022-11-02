@@ -81,6 +81,7 @@ Movies = [
     {"Attenuation": 2, "Delay": 230250, "Volume": "", "Movie": "Leprechaun 5 - In the Hood", "Year": "2000", "Length": "1:30:46"},
     {"Attenuation": "", "Delay": 27500, "Volume": "", "Movie": "Mac and Me", "Year": "1988", "Length": "1:39:22"},
     {"Attenuation": "", "Delay": 80780, "Volume": "", "Movie": "Miami Connection", "Year": "1987", "Length": "1:26:33"},
+    {"Attenuation": 2.5, "Delay": 154000, "Volume": "", "Movie": "Morbius", "Year": "2022", "Length": "1:44:29"},
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Mortal Kombat", "Year": "1995", "Length": ""},
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Mortal Kombat", "Year": "2021", "Length": ""},
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Mortal Kombat - Annihilation", "Year": "1997", "Length": ""},

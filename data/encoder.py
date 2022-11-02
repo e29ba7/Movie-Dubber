@@ -65,7 +65,7 @@ class Encode(QRunnable):
                 if Encode.MAIN_ALIVE:
                     if 'not recognized as an internal' in line.strip():
                         self.error_message('Missing FFMPEG', 'You must have FFMPEG in your PATH, or in the Movie Dubber root directory')
-                        raise Exception
+                        raise FileNotFoundError
                     if 'Duration:' in line.strip() and first_dur:
                         self.dur = re.search(r'\d{2}:\d{2}:\d{2}', line.strip())
                         self.translated_duration = self.convert_time_to_ms(self.dur.group())
@@ -79,10 +79,9 @@ class Encode(QRunnable):
                         self.signals.complete.emit(True)
                         self.kill_proc()
                 else:
-                    print('loser')
                     self.kill_proc()
-        except ValueError: pass
-        except Exception: pass
+        except ValueError: ...
+        except FileNotFoundError: ...
 
     #################
     #|  FUNCTIONS  |#
