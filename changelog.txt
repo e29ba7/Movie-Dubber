@@ -1,0 +1,6 @@
+v1.1.0 - 2022.11.02
+=========================
+- Added custom titlebar and buttons
+- Window corners are now rounded
+- Input box's text will no longer get in the way
+- Updated the database a bit
