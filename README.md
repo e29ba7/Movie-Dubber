@@ -1,5 +1,5 @@
 # Movie Dubber
-Right now, this is a GUI to run an ffmpeg command to overlay an audio track on a video file; currently intended for movies and dubs, as you must load from the database.
+Right now, this is a GUI to run an ffmpeg command to overlay an audio track on a video file. Currently intended for movies and dubs, as you must load from the database.
 
 ## Things you should know
 - The database currently only contains dubs from [Jaboody Dubs](https://www.patreon.com/jaboodydubs/posts)
