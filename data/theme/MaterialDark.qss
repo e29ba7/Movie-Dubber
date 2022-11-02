@@ -6,13 +6,17 @@ Company: GTRONICK
 Last updated: 04/12/2018, 15:00.
 Available at: https://github.com/GTRONICK/QSS/blob/master/MaterialDark.qss
 */
-/* Edited for my MovieDubber program */
+/* Edited for my Movie Dubber program - f09f9095 */
 
 QMainWindow {
 	background-color:#1e1d23;
+	border: 1px solid #a9b7c6;
+	border-radius: 4px;
 }
 QDialog {
 	background-color:#1e1d23;
+	border: 1px solid #a9b7c6;
+	border-radius: 4px;
 }
 QColorDialog {
 	background-color:#1e1d23;
