@@ -12,6 +12,7 @@ Right now, this is a GUI to run an ffmpeg command to overlay an audio track on a
   <summary>Screenshots</summary>
 
   ![Main Screen](https://github.com/f09f9095/Movie-Dubber/blob/main/etc/Main%20Screen.png?raw=true)
+  ![Main Screen Progress](https://github.com/f09f9095/Movie-Dubber/blob/main/etc/Main%20Screen%20Progress.png?raw=true)
   ![Database](https://github.com/f09f9095/Movie-Dubber/blob/main/etc/Database.png?raw=true)
 </details>
 
