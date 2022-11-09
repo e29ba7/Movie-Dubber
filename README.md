@@ -21,7 +21,7 @@ Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie
 </details>
 
 ## Instructions
-Things you'll need:
+### Things you'll need:
 - ffmpeg [added to your path](https://www.youtube.com/watch?v=3z9rUl9r2oA) - [Windows](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z)
   - You may also take the ffmpeg.exe from ffmpeg-git-full zip and put it in the root folder of the Movie Dubber exe (or src folder if running from source).
 - A movie file that **_matches the Length_** of the listed movie in the database in format: `mkv, mp4`
