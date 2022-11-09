@@ -33,8 +33,8 @@ Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie
 2. Download repo source code
 3. Ensure FFMPEG is either added to PATH or ffmpeg in src folder
 4. Open shell/cmd in src folder
- 4.1 Windows: Shift+Right_Click in src folder and select open cmd/powershell here
- 4.2 Linux: Right click in src folder and select open terminal
+   - Windows: Shift+Right_Click in src folder and select open cmd/powershell here
+   - Linux: Right click in src folder and select open terminal
 5. Run `py __init__.py`
 
 ### Steps in application:
