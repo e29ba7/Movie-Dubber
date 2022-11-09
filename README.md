@@ -1,7 +1,7 @@
 # Movie Dubber
 
 ### What does it do?
-Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie being dubbed with the help of FFMPEG. Dubbable movies and their options can be selected from the database (Load button). [Options](https://github.com/f09f9095/Movie-Dubber/edit/main/README.md#options) can be adjusted to your liking.
+Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie being dubbed with the help of FFMPEG. Dubbable movies and their options can be selected from the database (Load button). [Options](https://github.com/f09f9095/Movie-Dubber#options) can be adjusted to your liking.
 
 ### Things you should know
 - The database currently only contains dubs from [Jaboody Dubs](https://www.patreon.com/jaboodydubs/posts)
