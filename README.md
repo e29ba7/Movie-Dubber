@@ -1,7 +1,7 @@
 # Movie Dubber
 
 ### What does it do?
-Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie being dubbed with the help of FFMPEG. Dubbable movies and their options can be selected from the database (Load button). [Options](https://github.com/f09f9095/Movie-Dubber#options) can be adjusted to your liking.
+Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie being dubbed with the help of FFMPEG. Dubbable movies and their options can be selected from the database. [Options](https://github.com/f09f9095/Movie-Dubber#options) can be adjusted to your liking.
 
 ### Things you should know
 - The database currently only contains dubs from [Jaboody Dubs](https://www.patreon.com/jaboodydubs/posts)
@@ -31,7 +31,7 @@ Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie
 ### Steps for running from source:
 1. [Install Python 3.8+](https://www.python.org/downloads/), ensure you select add to PATH during installation
 2. Download repo source code
-3. Ensure FFMPEG is either added to PATH or ffmpeg in src folder
+3. Ensure FFMPEG is either added to PATH or in src folder
 4. Open shell/cmd in src folder
    - Windows: Shift+Right_Click in src folder and select open cmd/powershell here
    - Linux: Right click in src folder and select open terminal
@@ -39,9 +39,9 @@ Movie Dubber allows you to syncronize movie dubs (an audio track) with the movie
 
 ### Steps in application:
 >1. Select output folder where movie will be saved
->2. Select input movie file (Should match movie duration (Length) in database for proper sync)
+>2. Select input movie file (should match movie length in database for proper sync)
 >3. Select input audio track
->4. Select movie to be synced from database (Must have delay)
+>4. Select movie to be synced from database (must have delay)
 >5. Adjust volume and ratio options if desired - I recommend using ratio 2.5 usually
 >6. Press Encode and wait
 
