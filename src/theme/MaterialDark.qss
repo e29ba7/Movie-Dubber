@@ -386,29 +386,23 @@ QScrollArea {
 	background-color: #1e1d23;
 }
 QSlider::groove:horizontal {
-	height: 2px;
-	background: #04b97f;
+	height: 15px;
+	background-color: #333333;
 }
 QSlider::groove:vertical {
 	width: 5px;
-	background: #04b97f;
+	background-color: #333333;
 }
 QSlider::handle:horizontal {
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #333333, stop:1 #444444);
 	border: 1px solid #04b97f;
-	width: 8px;
+	width: 5px;
+	height: 15px;
 	margin: -5px 0;
 	border-radius: 7px;
 }
-/* Ui_Dialog.location_slider::handle:horizontal { I'd like to style just the slider to have a really long bar
-	background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
-	border: 1px solid #5c5c5c;
-	length: 50px;
-	margin: -5px 0;
-	border-radius: 7px;
-} */
 QSlider::handle:vertical {
-	background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:0 #b4b4b4, stop:1 #8f8f8f);
+	background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:0 #333333, stop:1 #444444);
 	border: 1px solid #5c5c5c;
 	height: 14px;
 	margin: 0 -5px;
