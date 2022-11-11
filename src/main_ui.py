@@ -93,9 +93,9 @@ class MainWindow(DialogWindow):
         self.editor_button = QPushButton('E', self.central_widget)
         self.editor_button.setGeometry(QRect(207, 4, 16 ,16))
         self.editor_button.setToolTip("The editor isn't ready yet.")
-        # self.editor_button.setDisabled(True)
+        self.editor_button.setDisabled(True)
         self.editor_button.setDefault(True)
-        # self.editor_button.hide()
+        self.editor_button.hide()
         self.editor_button.clicked.connect(self.start_editor)
         '''Progress bar'''
         self.progress_bar = QProgressBar(self.central_widget)
