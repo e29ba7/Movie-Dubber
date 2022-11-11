@@ -2,12 +2,12 @@ import re
 
 from PyQt6.QtCore import QRect, QRegularExpression, QThreadPool
 from PyQt6.QtGui import QRegularExpressionValidator
-from PyQt6.QtWidgets import QLineEdit, QPushButton, QProgressBar, QFileDialog
+from PyQt6.QtWidgets import QLineEdit, QProgressBar, QFileDialog
 
 import encoder
 from database import database_ui
 from media_editor import Editor
-from utils import DialogWindow, ErrorDialog
+from utils import Button, DialogWindow, ErrorDialog
 
 
 class MainWindow(DialogWindow):
@@ -16,7 +16,7 @@ class MainWindow(DialogWindow):
         '''Titlebar tooltip - Author'''
         self.tb_title.setToolTip("Made by f09f9095")
         '''Titlebar buttons'''
-        self.minimize_button = QPushButton('-', self.central_widget)
+        self.minimize_button = Button('-', self.central_widget)
         self.minimize_button.setGeometry(QRect(230, 4, 16, 16))
         self.minimize_button.clicked.connect(self.showMinimized)
         self.minimize_button.setStyleSheet("""
@@ -24,7 +24,7 @@ class MainWindow(DialogWindow):
             border-radius: 4px;"""
             )
         '''Output button'''
-        self.output_button = QPushButton('Output', self.central_widget)
+        self.output_button = Button('Output', self.central_widget)
         self.output_button.setGeometry(QRect(10, 25, 61, 21))
         self.output_button.setToolTip("Select file output location")
         self.output_button.clicked.connect(self.output_file_location)
@@ -60,7 +60,7 @@ class MainWindow(DialogWindow):
         self.audio_ratio_text_box.setPlaceholderText("Ratio")
         self.audio_ratio_text_box.setValidator(QRegularExpressionValidator(QRegularExpression(r'\d\.\d{2}')))
         '''Video button'''
-        self.video_Button = QPushButton('Video File', self.central_widget)
+        self.video_Button = Button('Video File', self.central_widget)
         self.video_Button.setGeometry(QRect(10, 85, 61, 21))
         self.video_Button.setToolTip("Select video input")
         self.video_Button.clicked.connect(self.get_video_file)
@@ -70,7 +70,7 @@ class MainWindow(DialogWindow):
         self.video_text_box.setToolTip("Select video input")
         self.video_text_box.setPlaceholderText('Select Video File')
         '''Audio button'''
-        self.audio_button = QPushButton('Audio File', self.central_widget)
+        self.audio_button = Button('Audio File', self.central_widget)
         self.audio_button.setGeometry(QRect(10, 115, 61, 21))
         self.audio_button.setToolTip("Select audio input to overlay")
         self.audio_button.clicked.connect(self.get_audio_file)
@@ -80,17 +80,17 @@ class MainWindow(DialogWindow):
         self.audio_text_box.setToolTip("Select audio input to overlay")
         self.audio_text_box.setPlaceholderText('Select Audio Track')
         '''Load button'''
-        self.load_button = QPushButton('Load', self.central_widget)
+        self.load_button = Button('Load', self.central_widget)
         self.load_button.setGeometry(QRect(10, 145, 50, 21))
         self.load_button.setToolTip("Load sync information from database.")
         self.load_button.clicked.connect(self.open_database)
         '''Encode button'''
-        self.encode_button = QPushButton('Encode', self.central_widget)
+        self.encode_button = Button('Encode', self.central_widget)
         self.encode_button.setGeometry(QRect(65, 145, 56, 21))
         self.encode_button.setToolTip("Begin encoding process")
         self.encode_button.clicked.connect(self.check_inputs_and_encode)
         '''Editor button (Editor is not enabled)'''
-        self.editor_button = QPushButton('E', self.central_widget)
+        self.editor_button = Button('E', self.central_widget)
         self.editor_button.setGeometry(QRect(207, 4, 16 ,16))
         self.editor_button.setToolTip("The editor isn't ready yet.")
         self.editor_button.setDisabled(True)

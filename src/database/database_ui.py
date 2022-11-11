@@ -1,9 +1,9 @@
 from PyQt6.QtCore import QRect
 from PyQt6.QtSql import QSqlDatabase, QSqlTableModel
-from PyQt6.QtWidgets import QTableView, QAbstractItemView, QPushButton, QLabel
+from PyQt6.QtWidgets import QTableView, QAbstractItemView, QLabel
 
 from database import data_jaboody
-from utils import DialogWindow
+from utils import Button, DialogWindow
 
 
 class Ui_Database(DialogWindow):
@@ -29,12 +29,12 @@ class Ui_Database(DialogWindow):
         self.table.doubleClicked.connect(self.load_data)
         self.table.show()
         '''Load button'''
-        self.load_button = QPushButton('Load', self)
+        self.load_button = Button('Load', self)
         self.load_button.setGeometry(QRect(256, 737, 71, 21))
         self.load_button.setDefault(True)
         self.load_button.clicked.connect(self.load_data)
         '''Cancel button'''
-        self.cancel_button = QPushButton('Cancel', self)
+        self.cancel_button = Button('Cancel', self)
         self.cancel_button.setGeometry(QRect(333, 737, 71, 21))
         self.cancel_button.clicked.connect(self.cancel_load)
         '''Execute'''
