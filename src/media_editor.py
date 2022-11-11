@@ -3,12 +3,12 @@ import ffmpeg
 
 from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import QRect, QUrl, QSize, Qt
-from PyQt6.QtWidgets import QPushButton, QLabel, QSlider, QFrame, QSpinBox
+from PyQt6.QtWidgets import QLabel, QFrame, QSpinBox
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput, QVideoSink, QVideoFrame
 from PyQt6.QtMultimediaWidgets import QVideoWidget, QGraphicsVideoItem
 from threading import Thread
 
-from utils import DialogWindow
+from utils import Button, DialogWindow, Slider
 
 
 class Editor(DialogWindow):
@@ -40,7 +40,7 @@ class Editor(DialogWindow):
         self.audio_widget.setVolume(1.00)
         self.audio_widget_2.setVolume(1.00)
         '''Play button'''
-        self.play_button = QPushButton(self)
+        self.play_button = Button('', self)
         self.play_button.setGeometry(QRect(10, 573, 32, 24))
         self.play_icon = QIcon()
         self.play_icon.addFile("theme/play_pause_icon_137298.png")
@@ -48,17 +48,17 @@ class Editor(DialogWindow):
         self.play_button.setIconSize(QSize(25, 25))
         self.play_button.clicked.connect(self.play_pause)
         '''Restart button'''
-        self.restart_button = QPushButton(self)
+        self.restart_button = Button('', self)
         self.restart_button.setGeometry(QRect(50, 573, 32, 24))
         self.restart_button.setText('R/V')
         self.restart_button.clicked.connect(self.set_video_to_beginning)
         '''Restart both video and audio button'''
-        self.restart_both_button = QPushButton(self)
+        self.restart_both_button = Button('', self)
         self.restart_both_button.setGeometry(QRect(90, 573, 32, 24))
         self.restart_both_button.setText('R/B')
         self.restart_both_button.clicked.connect(self.restart_audio_and_video)
         '''Restart everything button'''
-        self.restart_everything_button = QPushButton(self)
+        self.restart_everything_button = Button('', self)
         self.restart_everything_button.setGeometry(QRect(130, 573, 32, 24))
         self.restart_everything_button.setText("R/E")
         self.restart_everything_button.clicked.connect(self.restart_everything)
@@ -66,14 +66,14 @@ class Editor(DialogWindow):
         self.movie_volume_label = QLabel(self)
         self.movie_volume_label.setGeometry(QRect(684, 580, 78, 13))
         self.movie_volume_label.setText('Movie Volume:')
-        self.movie_volume = QSlider(self)
+        self.movie_volume = Slider(Qt.Orientation.Horizontal, self)
         self.movie_volume.setGeometry(QRect(767, 576, 200, 25))
         self.movie_volume.setRange(0, 100)
         self.movie_volume.setPageStep(5)
         self.movie_volume.setSliderPosition(50)
         self.movie_volume.setTracking(True)
-        self.movie_volume.setOrientation(Qt.Orientation.Horizontal)
-        self.movie_volume.setTickPosition(QSlider.TickPosition.TicksBothSides)
+        # self.movie_volume.setOrientation(Qt.Orientation.Horizontal)
+        self.movie_volume.setTickPosition(Slider.TickPosition.TicksBothSides)
         self.movie_volume.valueChanged.connect(self.change_volume)
         self.divider = QFrame(self)
         self.divider.setGeometry(QRect(985, 576, 3, 23))
@@ -82,7 +82,7 @@ class Editor(DialogWindow):
         self.attenuation_label = QLabel(self)
         self.attenuation_label.setGeometry(QRect(1000, 580, 65, 13))
         self.attenuation_label.setText('Attenuation:')
-        self.attenuation_slider = QSlider(self)
+        self.attenuation_slider = Slider(Qt.Orientation.Horizontal, self)
         self.attenuation_slider.setGeometry(QRect(1071, 576, 200, 25))
         self.attenuation_slider.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.attenuation_slider.setMinimum(-10)
@@ -91,22 +91,22 @@ class Editor(DialogWindow):
         self.attenuation_slider.setProperty("value", 0)
         self.attenuation_slider.setSliderPosition(0)
         self.attenuation_slider.setTracking(True)
-        self.attenuation_slider.setOrientation(Qt.Orientation.Horizontal)
-        self.attenuation_slider.setTickPosition(QSlider.TickPosition.TicksBothSides)
+        # self.attenuation_slider.setOrientation(Qt.Orientation.Horizontal)
+        self.attenuation_slider.setTickPosition(Slider.TickPosition.TicksBothSides)
         '''Location slider and box'''
-        self.location_slider = QSlider(self)
+        self.location_slider = Slider(Qt.Orientation.Horizontal, self)
         self.location_slider.setGeometry(QRect(10, 595, 1191, 41))
         self.location_slider.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.location_slider.setMinimum(0)
-        self.location_slider.setOrientation(Qt.Orientation.Horizontal)
+        # self.location_slider.setOrientation(Qt.Orientation.Horizontal)
         self.location_slider.sliderMoved.connect(self.playback_position)
         self.location_box = QSpinBox(self)
         self.location_box.setMinimum(0)
         self.location_box.setGeometry(QRect(1210, 605, 61, 22))
         '''Movie track slider, label, and spinbox'''
-        self.movie_track_slider = QSlider(self)
+        self.movie_track_slider = Slider(Qt.Orientation.Horizontal, self)
         self.movie_track_slider.setGeometry(QRect(10, 635, 1191, 41))
-        self.movie_track_slider.setOrientation(Qt.Orientation.Horizontal)
+        # self.movie_track_slider.setOrientation(Qt.Orientation.Horizontal)
         # self.movie_track_slider.setMaximum(9999999)
         self.movie_track_slider.valueChanged.connect(self.adjust_movie_track_spinbox)
         self.movie_delay_label = QLabel(self)

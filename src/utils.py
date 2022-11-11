@@ -2,7 +2,7 @@ import os
 
 from PyQt6.QtCore import QRect, Qt
 from PyQt6.QtGui import QIcon, QPixmap
-from PyQt6.QtWidgets import QWidget, QPushButton, QLabel, QDialog
+from PyQt6.QtWidgets import QWidget, QPushButton, QLabel, QDialog, QSlider
 
 
 class Directory:
@@ -12,6 +12,7 @@ class Directory:
     @classmethod
     def data(cls, filename):
         return os.path.join(cls.theme, filename)
+
 
 class DialogWindow(QDialog):
     def __init__(self, icon: str, title: str, width: int, height: int):
@@ -40,9 +41,8 @@ class DialogWindow(QDialog):
         self.tb_icon.setGeometry(QRect(3, 4, 16, 16))
         self.tb_title = QLabel(self.title, self.central_widget)
         self.tb_title.setGeometry(QRect(25, 5, 150, 15))
-        # self.tb_title.setText(self.title)
         '''Close button'''
-        self.close_button = QPushButton("X", self.central_widget)
+        self.close_button = Button('X', self.central_widget)
         self.close_button.setGeometry(QRect(self.width - 20, 4, 16, 16))
         self.close_button.clicked.connect(self.close)
         self.close_button.setStyleSheet('''
@@ -50,15 +50,16 @@ class DialogWindow(QDialog):
             border-radius: 4px;'''
             )
 
-    def mousePressEvent(self, event):
-        self.dragPos = event.globalPosition().toPoint()
+    def mousePressEvent(self, mouse_event):
+        self.drag_position = mouse_event.globalPosition().toPoint()
 
-    def mouseMoveEvent(self, event):
+    def mouseMoveEvent(self, mouse_event):
         try:
-            self.move(self.pos() + event.globalPosition().toPoint() - self.dragPos)
-            self.dragPos = event.globalPosition().toPoint()
-            event.accept()
+            self.move(self.pos() + mouse_event.globalPosition().toPoint() - self.drag_position)
+            self.drag_position = mouse_event.globalPosition().toPoint()
+            mouse_event.accept()
         except AttributeError: ...
+
 
 class ErrorDialog(DialogWindow):
     def __init__(self, title: str, error: str):
@@ -69,3 +70,20 @@ class ErrorDialog(DialogWindow):
         self.error_label.setGeometry(QRect(20, 40, 240, 15))
         self.error_label.setText(self.error)
         self.exec()
+
+
+class Button(QPushButton):
+    def __init__(self, title, parent):
+        super().__init__(title, parent)
+
+    #Ignore click and drag
+    def mouseMoveEvent(self, mouse_event):
+        ...
+
+
+class Slider(QSlider):
+    def __init__(self, orientation, parent):
+        super().__init__(orientation, parent)
+
+    def mouseMoveEvent(self, mouse_event):
+        ...
