@@ -2,7 +2,7 @@ import os
 import re
 import subprocess
 
-from PyQt6.QtCore import QRunnable, pyqtSlot, pyqtSignal, QObject
+from PyQt6.QtCore import QObject, QRunnable, pyqtSignal, pyqtSlot
 from PyQt6.QtWidgets import QMessageBox
 
 from utils import ErrorDialog

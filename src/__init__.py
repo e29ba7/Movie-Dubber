@@ -2,9 +2,8 @@ import sys
 
 from PyQt6.QtWidgets import QApplication
 
-from utils import Directory
 import main_ui as main_ui
-
+from utils import Directory
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

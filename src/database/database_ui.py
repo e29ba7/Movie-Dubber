@@ -1,6 +1,6 @@
 from PyQt6.QtCore import QRect
 from PyQt6.QtSql import QSqlDatabase, QSqlTableModel
-from PyQt6.QtWidgets import QTableView, QAbstractItemView, QLabel
+from PyQt6.QtWidgets import QAbstractItemView, QLabel, QTableView
 
 from database import data_jaboody
 from utils import Button, DialogWindow

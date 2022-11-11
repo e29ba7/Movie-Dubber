@@ -2,7 +2,7 @@ import os
 
 from PyQt6.QtCore import QRect, Qt
 from PyQt6.QtGui import QIcon, QPixmap
-from PyQt6.QtWidgets import QWidget, QPushButton, QLabel, QDialog, QSlider
+from PyQt6.QtWidgets import QDialog, QLabel, QPushButton, QSlider, QWidget
 
 
 class Directory:

@@ -1,14 +1,18 @@
-import ffmpeg
-#import numpy as np
-
-from PyQt6.QtGui import QIcon
-from PyQt6.QtCore import QRect, QUrl, QSize, Qt
-from PyQt6.QtWidgets import QLabel, QFrame, QSpinBox
-from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput, QVideoSink, QVideoFrame
-from PyQt6.QtMultimediaWidgets import QVideoWidget, QGraphicsVideoItem
 from threading import Thread
 
+import ffmpeg
+from PyQt6.QtCore import QRect, QSize, Qt, QUrl
+from PyQt6.QtGui import QIcon
+from PyQt6.QtMultimedia import (QAudioOutput, QMediaPlayer, QVideoFrame,
+                                QVideoSink)
+from PyQt6.QtMultimediaWidgets import QGraphicsVideoItem, QVideoWidget
+from PyQt6.QtWidgets import QFrame, QLabel, QSpinBox
+
 from utils import Button, DialogWindow, Slider
+
+#import numpy as np
+
+
 
 
 class Editor(DialogWindow):

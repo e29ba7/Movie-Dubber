@@ -2,7 +2,7 @@ import re
 
 from PyQt6.QtCore import QRect, QRegularExpression, QThreadPool
 from PyQt6.QtGui import QRegularExpressionValidator
-from PyQt6.QtWidgets import QLineEdit, QProgressBar, QFileDialog
+from PyQt6.QtWidgets import QFileDialog, QLineEdit, QProgressBar
 
 import encoder
 from database import database_ui
