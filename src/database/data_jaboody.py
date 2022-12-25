@@ -4,7 +4,7 @@ Movies = [
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Back the the Future", "Year": "1985", "Length": ""},
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Batman - The Movie", "Year": "1966", "Length": "1:44:53"},
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Batman", "Year": "1989", "Length": ""},
-    {"Attenuation": 3, "Delay": 277700, "Volume": "-4", "Movie": "Batman Forever", "Year": "1995", "Length": "2:01:35"},
+    {"Attenuation": 5, "Delay": 178250, "Volume": "-15", "Movie": "Batman Forever", "Year": "1995", "Length": "2:01:35"},
     {"Attenuation": 2, "Delay": 207650, "Volume": "", "Movie": "Batman Returns", "Year": "1992", "Length": "2:06:27"},
     {"Attenuation": "", "Delay": "", "Volume": "", "Movie": "Big Trouble in Little China", "Year": "1986", "Length": "1:39:49"},
     {"Attenuation": "", "Delay": 179600, "Volume": "", "Movie": "Birdemic - Shock and Terror", "Year": "2010", "Length": "1:33:29"},
