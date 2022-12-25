@@ -1,13 +1,19 @@
+2022.11.11
+=========================
+- Fixed window jumping when dragging on button
+
+
+2022.11.06
+=========================
+- Reduced / cleaned up code
+- Fixed return key sometimes closing program
+- Fixed Encode button not immediately disabling when clicked
+- Movie database now loads into memory instead of creating a database file; it's faster
+
+
 v1.1.0 - 2022.11.02
 =========================
 - Added custom titlebar and buttons
 - Window corners are now rounded
 - Input box's text will no longer get in the way
 - Updated the database a bit
-
-v1.2.0
-=========================
-- Reduced / cleaned up code
-- Fixed return key sometimes closing program
-- Fixed Encode button not immediately disabling when clicked
-- Movie database now loads into memory instead of creating a database file; it's faster
