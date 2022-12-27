@@ -35,13 +35,13 @@ class MainWindow(DialogWindow):
         self.output_text_box.setPlaceholderText("Select Output Location")
         '''Delay text box'''
         self.delay_text_box = QLineEdit(self.central_widget)
-        self.delay_text_box.setGeometry(QRect(10, 55, 101, 21))
+        self.delay_text_box.setGeometry(QRect(10, 55, 96, 21))
         self.delay_text_box.setPlaceholderText("Delay (ms)")
         self.delay_text_box.setToolTip("Enter movie delay in milliseconds")
         self.delay_text_box.setValidator(QRegularExpressionValidator(QRegularExpression(r'\d{6}')))
         '''Volume text box'''
         self.volume_text_box = QLineEdit(self.central_widget)
-        self.volume_text_box.setGeometry(QRect(120, 55, 62, 21))
+        self.volume_text_box.setGeometry(QRect(115, 55, 67, 21))
         self.volume_text_box.setToolTip("""
             <p>Enter volume change in dB (integer).
             Can be negative. E.g. '5 or -3'</p>"""

@@ -1,4 +1,4 @@
-import os
+import pathlib
 
 from PyQt6.QtCore import QRect, Qt
 from PyQt6.QtGui import QIcon, QPixmap
@@ -6,12 +6,12 @@ from PyQt6.QtWidgets import QDialog, QLabel, QPushButton, QSlider, QWidget
 
 
 class Directory:
-    base = os.path.splitdrive(__file__)[0]
-    theme = os.path.join(base, 'theme')
+    base = pathlib.Path(__file__).parents[0]
+    theme_dir = base / 'theme'
 
     @classmethod
-    def data(cls, filename):
-        return os.path.join(cls.theme, filename)
+    def theme(cls, filename: str) -> str:
+        return str(cls.theme_dir / filename)
 
 
 class DialogWindow(QDialog):
@@ -24,7 +24,7 @@ class DialogWindow(QDialog):
         self.setFixedSize(self.width, self.height)
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
-        self.setWindowIcon(QIcon(Directory.data(self.icon)))
+        self.setWindowIcon(QIcon(Directory.theme(self.icon)))
         self.setWindowTitle(self.title)
         '''Rounded border'''
         self.rounded_borders = QWidget(self)
@@ -37,7 +37,7 @@ class DialogWindow(QDialog):
         self.central_widget = QWidget(self)
         '''Titlebar'''
         self.tb_icon = QLabel(self.central_widget)
-        self.tb_icon.setPixmap(QPixmap(Directory.data(self.icon)))
+        self.tb_icon.setPixmap(QPixmap(Directory.theme(self.icon)))
         self.tb_icon.setGeometry(QRect(3, 4, 16, 16))
         self.tb_title = QLabel(self.title, self.central_widget)
         self.tb_title.setGeometry(QRect(25, 5, 150, 15))
