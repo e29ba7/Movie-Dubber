@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QFileDialog, QLineEdit, QProgressBar
 
 import encoder
 from database import database_ui
-from media_editor import Editor
+# from media_editor import Editor
 from utils import Button, DialogWindow, ErrorDialog
 
 
@@ -194,7 +194,8 @@ class MainWindow(DialogWindow):
         self.encode_button.setDisabled(True)
 
     def start_editor(self):
-        self.editor = Editor(self.video_text_box.text(), self.audio_text_box.text())
+        # self.editor = Editor(self.video_text_box.text(), self.audio_text_box.text())
+        ...
 
     '''Executes on program end'''
     def closeEvent(self, event):
