@@ -48,7 +48,6 @@ class Encode(QRunnable):
                 '-i', f'"{self.audio_text_box.text()}"',
                 '-filter_complex', f'''\
                     "[0:a:0]volume={self.volume_text_box.text()}dB[vol];\
-                    [1:a]asplit=2[sc][mix];\
                     [vol][sc]sidechaincompress=threshold=0.01:\
                     ratio={self.audio_ratio_text_box.text()}:\
                     mix=1:attack=1[comp];\
