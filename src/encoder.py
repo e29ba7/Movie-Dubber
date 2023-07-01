@@ -48,16 +48,17 @@ class Encode(QRunnable):
                 '-i', f'"{self.audio_text_box.text()}"',
                 '-filter_complex', f'''\
                     "[0:a:0]volume={self.volume_text_box.text()}dB[vol];\
-                    [vol][sc]sidechaincompress=threshold=0.01:\
+                    [vol]sidechaincompress=threshold=0.01:\
                     ratio={self.audio_ratio_text_box.text()}:\
-                    mix=1:attack=1[comp];\
-                    [comp][mix]amix"''',
+                    mix=1:attack=1:release=500[comp];\
+                    [comp][1:a]amix=inputs=2"''',
                 '-c:v', 'copy',
+                '-c:s', 'copy',
                 '-c:a', 'ac3',
                 '-b:a', '256k',
                 '-map', '0:v',
-                '-map', '0:a:0',
-                '-map', '1:a:0',
+                '-map', '0:a',
+                '-map', '1:a',
                 '-metadata', f'"title={self.movie}"',
                 '-metadata', f'"source={self.source_video}"',
                 '-metadata', f'"delay={self.delay_text_box.text()}"',
